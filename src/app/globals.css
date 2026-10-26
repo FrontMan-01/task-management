@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #000000;
+  --foreground: #fafafa;
+  --surface: #0a0a0c;
+  --surface-subtle: #121216;
+  --surface-elevated: #18181f;
+  --border: #23232c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-native input standard: min 16px to prevent iOS auto-zoom */
+input,
+select,
+textarea,
+button {
+  font-size: 16px;
+  touch-action: manipulation;
+}
+
+/* Interactive elements press feedback */
+button:active:not(:disabled),
+.interactive-tap:active {
+  transform: scale(0.97);
+  transition: transform 100ms ease-out;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Safe area utilities */
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top, 0px), 12px);
+}
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom, 0px), 16px);
+}
+.pb-nav {
+  padding-bottom: calc(72px + max(env(safe-area-inset-bottom, 0px), 16px));
+}

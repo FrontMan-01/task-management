@@ -1,0 +1,16 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/rollover",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/reminder?type=evening",
+      "schedule": "30 21 * * *"
+    },
+    {
+      "path": "/api/cron/reminder?type=sunday",
+      "schedule": "0 9 * * 0"
+    }
+  ]
+}
